@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { API_URL } from "../../config";
 import "./perfil.css";
 
-import PainelComercial from "./components/PainelComercial";
+import PainelComercial from "./components/painelcomercial";
 import Inventario from "./components/inventario";
 import Desempenho from "./components/desempenho";
 import ControleFuncionarios from "./components/controlefuncionarios";

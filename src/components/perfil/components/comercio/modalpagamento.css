@@ -1,0 +1,179 @@
+/* Fundo escuro */
+.fundo-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.25s ease;
+}
+
+/* Caixa principal */
+.modal-caixa {
+    width: 90%;
+    max-width: 430px;
+    background: #ffffff;
+    padding: 28px;
+    border-radius: 18px;
+    box-shadow: 0 0 18px rgba(212, 175, 55, 0.35);
+    text-align: center;
+    animation: subir 0.28s ease;
+    font-family: "Poppins", sans-serif;
+    border: 2px solid #d4af37;
+}
+
+/* Título */
+.modal-caixa h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #7c5c13;
+    margin-bottom: 14px;
+}
+
+/* Texto */
+.modal-caixa p {
+    font-size: 18px;
+    margin-bottom: 22px;
+    color: #333333;
+}
+
+/* Botões de escolha */
+.botoes-pagamento {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 22px;
+}
+
+/* Estilo base dos botões */
+.botoes-pagamento button,
+.btn-confirmar,
+.btn-voltar,
+.btn-fechar {
+    padding: 14px;
+    font-size: 17px;
+    font-weight: 600;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    transition: 0.28s;
+}
+
+/* Botões principais dourados */
+.botoes-pagamento button {
+    background: #d4af37;
+    color: #1a1a1a;
+}
+
+.botoes-pagamento button:hover {
+    background: #b9952f;
+    border-color: #8a7025;
+    transform: scale(1.02);
+}
+
+/* Confirmar, verde */
+.btn-confirmar {
+    margin: 0 22px;
+
+    background: #27ae60;
+    color: white;
+    border: 2px solid #1f864c;
+    margin-bottom: 14px;
+}
+
+.btn-confirmar:hover {
+    background: #229955;
+    transform: scale(1.02);
+}
+
+.btn-confirmar:disabled {
+    background: #b5c9b5;
+    border-color: #9fb29f;
+    transform: none;
+    cursor: default;
+}
+
+/* Voltar, dourado suave */
+.btn-voltar {
+    background: #f5e8b2;
+    color: #6e5a19;
+    border: 2px solid #d4af37;
+}
+
+.btn-voltar:hover {
+    background: #e3d496;
+    transform: scale(1.02);
+}
+
+/* Cancelar, vermelho */
+.btn-fechar {
+    background: #ffdddd;
+    color: #b30000;
+    border: 2px solid #ffbaba;
+}
+
+.btn-fechar:hover {
+    background: #ffc6c6;
+    transform: scale(1.02);
+}
+
+/* Campo de valor recebido */
+.modal-caixa input {
+    width: 94%;
+    padding: 14px;
+    font-size: 18px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    margin-bottom: 14px;
+    outline: none;
+    transition: 0.28s;
+    background: #fff9dc;
+}
+
+.modal-caixa input:focus {
+    border-color: #b9952f;
+    box-shadow: 0 0 8px rgba(212, 175, 55, 0.4);
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsivo */
+@media (max-width: 450px) {
+    .modal-caixa {
+        padding: 22px;
+    }
+
+    .modal-caixa h2 {
+        font-size: 22px;
+    }
+
+    .modal-caixa p {
+        font-size: 16px;
+    }
+}

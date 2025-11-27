@@ -1,0 +1,176 @@
+.lista-itens {
+    width: 100%;
+    max-width: 570px;
+    background: #fff;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    padding: 14px;
+    height: 300px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    animation: fadeIn 0.3s ease;
+}
+
+.lista-itens h3 {
+    text-align: center;
+    margin-bottom: 12px;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1f1f1f;
+}
+
+.lista-itens p {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+.tabela-itens {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-y: auto;
+}
+
+.tabela-itens thead th {
+    text-align: left;
+    padding: 10px;
+    background: #f3f3f3;
+    font-size: 14px;
+    font-weight: 700;
+    border-bottom: 2px solid #ddd;
+}
+
+.tabela-itens tbody td {
+    padding: 10px;
+    font-weight: 600;
+    border-bottom: 1px solid #eee;
+}
+
+.col-quantidade {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-mais,
+.btn-menos,
+.btn-remover {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 700;
+    transition: 0.2s;
+}
+
+.btn-mais {
+    background: #00a83f;
+    color: white;
+}
+
+.btn-mais:hover {
+    background: #008d34;
+}
+
+.btn-menos {
+    background: #d9534f;
+    color: white;
+}
+
+.btn-menos:hover {
+    background: #b94744;
+}
+
+.btn-remover {
+    background: #999;
+    color: white;
+}
+
+.btn-remover:hover {
+    background: #777;
+}
+
+.col-total {
+    text-align: right;
+    color: #00782b;
+    font-weight: 700;
+}
+
+/* Caixa de sugestões */
+.sugestoes-box {
+    margin-top: 10px;
+    background: #ffffff;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    max-height: 260px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
+    animation: fadeIn 0.25s ease;
+}
+
+/* Cada sugestão */
+.sugestao-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #f0e3b8;
+    transition: 0.2s ease;
+}
+
+.sugestao-item:last-child {
+    border-bottom: none;
+}
+
+/* Hover com dourado leve */
+.sugestao-item:hover {
+    background: #fff6ce;
+}
+
+/* Imagem da sugestão */
+.sugestao-img {
+    width: 55px;
+    height: 55px;
+    border-radius: 6px;
+    object-fit: cover;
+    border: 2px solid #d4af37;
+    background: #fff;
+}
+
+/* Informações */
+.sug-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+/* Nome do produto */
+.sug-nome {
+    font-size: 16px;
+    font-weight: 700;
+    color: #333;
+}
+
+/* Unidade do produto */
+.sug-unidade {
+    font-size: 13px;
+    color: #777;
+}
+
+/* Animação usada em outros componentes */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

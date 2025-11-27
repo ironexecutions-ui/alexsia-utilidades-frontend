@@ -1,0 +1,37 @@
+.desempenho-container {
+    width: 97%;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.15);
+    font-family: Poppins, sans-serif;
+}
+
+.desempenho-botoes {
+    display: flex;
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.desempenho-botoes button {
+    padding: 10px 18px;
+    border: none;
+    background: #d4af37;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.2s;
+}
+
+.desempenho-botoes button:hover {
+    background: #b8922e;
+}
+
+.desempenho-botoes .ativo {
+    background: #8f6b22;
+    color: white;
+}
+
+.desempenho-conteudo {
+    margin-top: 20px;
+}

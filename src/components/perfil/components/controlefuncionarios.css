@@ -1,0 +1,260 @@
+/* ----------------------------------------
+   ESTILO GERAL DO CONTAINER
+-----------------------------------------*/
+
+.controle-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 30px auto;
+    background: #fff9da;
+    padding: 30px;
+    border-radius: 14px;
+    color: white;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    font-family: "Poppins", sans-serif;
+}
+
+.controle-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: #7c1300;
+    font-size: 28px;
+    letter-spacing: 1px;
+}
+
+/* ----------------------------------------
+   BOTÃO ADICIONAR
+-----------------------------------------*/
+
+.btn-add {
+    padding: 10px 22px;
+    background: #D8C324;
+    border: none;
+    color: black;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-bottom: 20px;
+}
+
+.btn-add:hover {
+    background: #bca71d;
+}
+
+/* ----------------------------------------
+   TABELA DE FUNCIONÁRIOS
+-----------------------------------------*/
+
+.tabela-func {
+    width: 100%;
+    border-collapse: collapse;
+    background: #111;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.tabela-func thead {
+    background: #2a2a2a;
+}
+
+.tabela-func th {
+    padding: 14px;
+    color: #D8C324;
+    font-size: 15px;
+    border-bottom: 1px solid #333;
+}
+
+/* Ajuste profissional da impressão do código de barras */
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    .codigo-modal,
+    .codigo-modal * {
+        visibility: visible;
+    }
+
+    .codigo-modal {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 460px;
+        background: white;
+        padding: 0;
+        text-align: center;
+        box-shadow: none;
+        border: none;
+    }
+
+    /* Garante que o SVG saia igual ao gerado */
+    .codigo-modal svg {
+        width: 380px !important;
+        height: 90px !important;
+        margin: 0 auto;
+        display: block;
+        padding: 0;
+        background: white;
+    }
+
+    /* Remove botões */
+    .modal-btns {
+        display: none !important;
+    }
+
+    /* Remove o fundo escuro */
+    .modal-bg {
+        background: white !important;
+        position: static !important;
+    }
+}
+
+
+.tabela-func td {
+    padding: 12px;
+    text-align: center;
+    font-weight: bolder;
+
+    border-bottom: 1px solid #2a2a2a;
+    color: #e5e5e5;
+    font-size: 15px;
+}
+
+.tabela-func tr:hover td {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* ----------------------------------------
+   BOTÕES DA TABELA
+-----------------------------------------*/
+
+.btn-editar {
+    padding: 7px 14px;
+    background: #3498db;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.btn-editar:hover {
+    background: #2176b6;
+}
+
+.btn-apagar {
+    padding: 7px 14px;
+    background: #e63946;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-right: 5px;
+    transition: 0.3s;
+}
+
+.btn-apagar:hover {
+    background: #b82d38;
+}
+
+.btn-codigo {
+    padding: 7px 14px;
+    background: #D8C324;
+    border: none;
+    color: black;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-codigo:hover {
+    background: #bca71d;
+}
+
+/* ----------------------------------------
+   MODAL PADRÃO
+-----------------------------------------*/
+
+.modal-bg {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+}
+
+.modal {
+    width: 420px;
+    background: #222;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+}
+
+.modal h3 {
+    color: #D8C324;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 6px;
+    background: #333;
+    color: white;
+    outline: none;
+    transition: 0.3s;
+}
+
+.modal input:focus {
+    background: #3f3f3f;
+}
+
+/* Botões dentro do modal */
+
+.modal-btns {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-btns button {
+    padding: 10px 18px;
+    border: none;
+    background: #D8C324;
+    color: black;
+    cursor: pointer;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal-btns button:hover {
+    background: #bca71d;
+}
+
+/* ----------------------------------------
+   MODAL DE CÓDIGO DE BARRAS
+-----------------------------------------*/
+
+.codigo-modal {
+    width: 480px;
+    text-align: center;
+}
+
+.codigo-modal svg {
+    margin-top: 10px;
+    background: white;
+    padding: 10px;
+    border-radius: 6px;
+}

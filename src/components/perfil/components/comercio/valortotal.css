@@ -1,0 +1,108 @@
+/* Container principal */
+.total-container {
+    width: 93%;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Título */
+.total-container h2 {
+    font-size: 22px;
+    font-weight: 700;
+    color: #333;
+    text-align: center;
+}
+
+/* Área que junta valor e botões */
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* Valor total */
+.total-valor {
+    flex: 1;
+    font-size: 32px;
+    font-weight: 800;
+    color: #D4AF37;
+    background: #e9ffe9;
+    padding: 14px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid #9c8126;
+    letter-spacing: 1px;
+}
+
+/* Grupo de botões */
+.botoes-total {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+/* Botão principal de cobrança */
+.btn-cobrar {
+    padding: 12px 18px;
+    background: #D4AF37;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-cobrar:hover {
+    background: #0cb63f;
+    transform: scale(1.02);
+}
+
+.btn-cobrar:active {
+    transform: scale(0.98);
+}
+
+/* Botão de cancelar */
+.btn-cancelar {
+    padding: 12px 18px;
+    background: #b30000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+}
+
+.btn-cancelar:hover {
+    background: #d60000;
+    transform: scale(1.02);
+}
+
+.btn-cancelar:active {
+    transform: scale(0.98);
+}
+
+/* Animação de entrada */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

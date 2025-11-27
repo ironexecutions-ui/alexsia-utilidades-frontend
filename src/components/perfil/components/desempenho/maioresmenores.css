@@ -1,0 +1,188 @@
+/* ============================================================
+   CONTAINER PRINCIPAL
+============================================================ */
+.pagina-desempenho {
+    width: 100%;
+    padding: 25px;
+    font-family: "Poppins", sans-serif;
+    color: #4b2c00;
+    animation: fadeIn 0.4s ease;
+    background: #fffdf5;
+}
+
+/* TÍTULOS */
+.pagina-desempenho h3 {
+    margin-top: 35px;
+    margin-bottom: 12px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #7c0a00;
+    text-shadow: 0 0 4px rgba(255, 185, 80, 0.7);
+    letter-spacing: 0.8px;
+}
+
+/* ============================================================
+   FILTROS
+============================================================ */
+.filtros {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px;
+    background: linear-gradient(135deg, #fff0c7, #ffe8a3);
+    border-radius: 14px;
+    border: 2px solid #d4af37;
+    box-shadow: 0 0 16px rgba(212, 175, 55, 0.35);
+    margin-bottom: 35px;
+    animation: fadeIn 0.5s ease;
+}
+
+.filtros div {
+    display: flex;
+    flex-direction: column;
+}
+
+.filtros label {
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #7c0a00;
+    font-size: 15px;
+}
+
+/* Inputs com estilo moderno */
+.filtros input {
+    padding: 12px;
+    border: 2px solid #d4af37;
+    border-radius: 10px;
+    background: #fff5d6;
+    font-size: 15px;
+    transition: all 0.25s ease;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+.filtros input:focus {
+    border-color: #b9912b;
+    background: #fff2c2;
+    box-shadow: 0 0 10px rgba(255, 223, 120, 0.8);
+}
+
+/* ============================================================
+   BOTÃO DE BUSCA
+============================================================ */
+.btn-buscar {
+    padding: 14px 25px;
+    background: linear-gradient(135deg, #d4af37, #f8df7d);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 800;
+    color: #4b3300;
+    font-size: 15px;
+    margin-top: 12px;
+    transition: 0.25s ease;
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.45);
+}
+
+.btn-buscar:hover {
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(255, 200, 0, 0.6);
+}
+
+.btn-buscar:active {
+    transform: scale(0.97);
+}
+
+/* ============================================================
+   TABELAS
+============================================================ */
+.tabela {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 10px;
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.18);
+    animation: fadeIn 0.6s ease;
+}
+
+/* Cabeçalho com luxo */
+.tabela th {
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 800;
+    color: #4b2c00;
+
+    background: linear-gradient(90deg, #d4af37, #f2d98a, #d4af37);
+    border-bottom: 3px solid #b58e25;
+
+    letter-spacing: 0.5px;
+}
+
+/* Linhas */
+.tabela td {
+    padding: 13px;
+    font-size: 15px;
+    border-bottom: 1px solid #f4e0a3;
+    background: #ffffff;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+/* Hover poderoso */
+.tabela tr:hover td {
+    background: #fff4c0;
+    color: #7c0a00;
+    font-weight: 600;
+    box-shadow: inset 0 0 10px rgba(230, 180, 80, 0.3);
+}
+
+/* Última linha sem borda */
+.tabela tr:last-child td {
+    border-bottom: none;
+}
+
+/* ============================================================
+   ANIMAÇÕES
+============================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================================
+   TABELA DE MENORES VENDIDOS — TEMA VERMELHO PREMIUM
+============================================================ */
+
+/* Cabeçalho */
+.tabela-menos th {
+    background: linear-gradient(90deg, #b30000, #ff6a6a, #b30000);
+    border-bottom: 3px solid #7a0000;
+    color: #fff5f5;
+}
+
+/* Corpo */
+.tabela-menos td {
+    background: #ffe5e5;
+    border-bottom: 1px solid #ffbaba;
+    color: #7a0000;
+}
+
+/* Hover especial */
+.tabela-menos tr:hover td {
+    background: #ffd0d0;
+    color: #4d0000;
+    font-weight: 600;
+    box-shadow: inset 0 0 12px rgba(255, 80, 80, 0.35);
+}
+
+/* Última linha */
+.tabela-menos tr:last-child td {
+    border-bottom: none;
+}

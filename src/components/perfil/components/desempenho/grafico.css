@@ -1,0 +1,100 @@
+/* ============================================================
+   CONTAINER PRINCIPAL
+============================================================ */
+.pagina-desempenho {
+    width: 94%;
+    padding: 30px;
+    background: #fffdf5;
+    font-family: "Poppins", sans-serif;
+    animation: fadeIn 0.4s ease;
+}
+
+/* ============================================================
+   TÍTULOS DOS GRÁFICOS
+============================================================ */
+.pagina-desempenho h3 {
+    margin-top: 40px;
+    margin-bottom: 18px;
+    font-size: 24px;
+    font-weight: 800;
+    color: #7c0a00;
+    letter-spacing: 0.7px;
+    text-shadow: 0 0 6px rgba(255, 190, 80, 0.6);
+}
+
+/* ============================================================
+   BLOCO DO GRÁFICO (CARD PREMIUM)
+============================================================ */
+.grafico-box {
+    width: 100%;
+    height: 320px;
+
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 40px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.18),
+        0 0 18px rgba(212, 175, 55, 0.25);
+
+    transition: 0.25s ease;
+}
+
+/* Hover com brilho dourado */
+.grafico-box:hover {
+    transform: scale(1.02);
+    box-shadow:
+        0 12px 28px rgba(212, 175, 55, 0.45),
+        0 0 26px rgba(212, 175, 55, 0.55);
+}
+
+/* Canvas do gráfico  */
+.grafico-box canvas {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .grafico-box {
+        height: 260px;
+    }
+
+    .pagina-desempenho h3 {
+        font-size: 20px;
+    }
+}
+
+/* ============================================================
+   TOOLTIP PERSONALIZADO (CHART.JS)
+============================================================ */
+
+.chartjs-tooltip {
+    background: #fff6da !important;
+    border: 2px solid #d4af37 !important;
+    border-radius: 10px !important;
+
+    color: #7c0a00 !important;
+    font-weight: 600 !important;
+    font-size: 14px !important;
+
+    padding: 8px 12px !important;
+
+    box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4) !important;
+}
+
+/* ============================================================
+   ANIMAÇÃO GLOBAL
+============================================================ */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

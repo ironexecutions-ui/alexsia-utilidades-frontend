@@ -1,0 +1,283 @@
+/* Fonte profissional */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap");
+
+.inv-container {
+    width: 96.7%;
+    margin: 0px auto;
+    padding: 25px;
+    background: linear-gradient(135deg, #d4b800, #f5e37a);
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+    font-family: "Montserrat", sans-serif;
+    color: #2c2c2c;
+}
+
+.inv-container h2 {
+    text-align: center;
+    font-size: 32px;
+    color: #7a0000;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+}
+
+.inv-btn {
+    background: #7a0000;
+    color: #fff;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 10px;
+    font-size: 17px;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto 25px auto;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.inv-btn:hover {
+    background: #a10000;
+    transform: scale(1.05);
+}
+
+.inv-form {
+    background: #fff8db;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    margin-bottom: 30px;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+/* Inputs */
+.inv-form input,
+.inv-form textarea {
+    padding: 12px;
+    border: 2px solid #b69900;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 16px;
+    font-weight: 500;
+    outline: none;
+    color: #7a0000;
+    transition: 0.25s;
+}
+
+.inv-form input::placeholder {
+    color: #444;
+}
+
+.inv-form input:focus {
+    border-color: #7a0000;
+    background: #fff9e6;
+}
+
+/* Upload */
+.inv-form label {
+    font-weight: 600;
+    color: #7a0000;
+    font-size: 15px;
+}
+
+.inv-form input[type="file"] {
+    border: none;
+    padding: 0;
+    background: transparent;
+}
+
+/* Botão salvar */
+.inv-submit {
+    background: #000;
+    color: #fcd300;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.inv-submit:hover {
+    background: #222;
+    transform: scale(1.03);
+}
+
+/* Erro */
+.inv-erro {
+    color: red;
+    font-weight: 700;
+    background: #ffe0e0;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 15px;
+    border-left: 4px solid #c10000;
+}
+
+/* Animação */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.inv-form.editando {
+    border: 3px solid #d4b800;
+    background: #fff8cc;
+    box-shadow: 0 0 14px rgba(0, 0, 0, 0.25);
+}
+
+.inv-form.editando::before {
+    content: "Modo de edição ativado";
+    display: block;
+    color: #7a0000;
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.inv-preview {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-top: 10px;
+    border: 3px solid #d4b800;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ============================
+   RESPONSIVIDADE COMPLETA
+   ============================ */
+
+/* Telas até 1024px */
+@media (max-width: 1024px) {
+    .inv-container {
+        padding: 20px;
+    }
+
+    .inv-container h2 {
+        font-size: 28px;
+    }
+
+    .inv-form {
+        padding: 18px;
+    }
+}
+
+/* Telas até 768px (tablets) */
+@media (max-width: 768px) {
+    .inv-container {
+        width: 98%;
+        padding: 18px;
+    }
+
+    .inv-container h2 {
+        font-size: 26px;
+    }
+
+    .inv-btn {
+        width: 100%;
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    .inv-form input,
+    .inv-form textarea {
+        font-size: 15px;
+        padding: 10px;
+    }
+
+    .inv-submit {
+        width: 100%;
+        font-size: 17px;
+        padding: 12px;
+    }
+
+    .inv-preview {
+        width: 120px;
+        height: 120px;
+    }
+}
+
+/* Telas até 480px (celulares padrão) */
+@media (max-width: 480px) {
+    .inv-container {
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+    .inv-container h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .inv-form {
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .inv-btn {
+        font-size: 15px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .inv-form input,
+    .inv-form textarea {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    .inv-submit {
+        font-size: 16px;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .inv-preview {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Telas até 360px (celulares muito pequenos) */
+@media (max-width: 360px) {
+    .inv-container {
+        padding: 12px;
+    }
+
+    .inv-container h2 {
+        font-size: 20px;
+    }
+
+    .inv-form {
+        padding: 12px;
+    }
+
+    .inv-btn,
+    .inv-submit {
+        font-size: 14px;
+        padding: 9px;
+    }
+
+    .inv-form input,
+    .inv-form textarea {
+        font-size: 13px;
+        padding: 8px;
+    }
+
+    .inv-preview {
+        width: 85px;
+        height: 85px;
+    }
+}

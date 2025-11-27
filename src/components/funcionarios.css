@@ -1,0 +1,220 @@
+.funcionarios-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 25px;
+
+    /* Gradiente mais profundo e rico */
+    background: linear-gradient(180deg, #f2cc45 0%, #d9b63a 45%, #c7a130 100%);
+
+    border-radius: 12px;
+    border: 1px solid #4a0000;
+
+    /* Sombreamento mais forte */
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.22),
+        inset 0 2px 6px rgba(255, 255, 255, 0.25);
+
+    text-align: center;
+
+    /* Brilho suave */
+    backdrop-filter: blur(3px);
+
+    /* Brilho na borda interna */
+    outline: 2px solid rgba(255, 255, 255, 0.18);
+    outline-offset: -4px;
+
+    /* Animação sutil e refinada */
+    animation: fadeDown 0.8s ease-out, goldPulse 6s ease-in-out infinite;
+}
+
+/* Efeito nobre respirando */
+@keyframes goldPulse {
+    0% {
+        filter: brightness(1);
+    }
+
+    50% {
+        filter: brightness(1.08);
+    }
+
+    100% {
+        filter: brightness(1);
+    }
+}
+
+.funcionarios-titulo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #8b0000;
+    margin-bottom: 25px;
+    letter-spacing: 0.6px;
+
+    /* Sombra mais profunda com camadas */
+    text-shadow:
+        0 2px 4px rgba(0, 0, 0, 0.25),
+        0 3px 6px rgba(0, 0, 0, 0.18);
+
+    /* Leve brilho para destacar */
+    filter: brightness(1.06);
+
+    /* Sutil animação de entrada */
+    animation: fadeTitle 0.9s ease-out;
+}
+
+/* Entrada suave e elegante */
+@keyframes fadeTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.grupo {
+    background: rgba(255, 255, 255, 0.18);
+    padding: 18px;
+    margin-bottom: 22px;
+    border-radius: 10px;
+    backdrop-filter: blur(2px);
+
+    /* Profundidade mais elegante */
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.12),
+        0 4px 10px rgba(0, 0, 0, 0.18),
+        0 1px 1px rgba(255, 255, 255, 0.45);
+
+    /* Brilho suave nas bordas */
+    outline: 1px solid rgba(255, 255, 255, 0.22);
+    outline-offset: -2px;
+
+    /* Toque de luxo */
+    transition: filter 0.25s ease, box-shadow 0.3s ease;
+}
+
+/* Hover sutil sem mudar cor */
+.grupo:hover {
+    filter: brightness(1.03);
+    box-shadow:
+        inset 0 2px 6px rgba(0, 0, 0, 0.12),
+        0 6px 14px rgba(0, 0, 0, 0.25),
+        0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+.grupo-titulo {
+    font-size: 20px;
+    font-weight: 800;
+    margin-bottom: 14px;
+    color: #7b0000;
+
+    /* Sombra aprimorada com mais camadas */
+    text-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.25),
+        0 2px 4px rgba(0, 0, 0, 0.18);
+
+    /* Brilho suave para destacar */
+    filter: brightness(1.05);
+
+    /* Entrada mais elegante */
+    animation: fadeGroupTitle 0.7s ease-out;
+}
+
+@keyframes fadeGroupTitle {
+    from {
+        opacity: 0;
+        transform: translateY(-4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.linha {
+    padding: 12px;
+    margin: 8px 0;
+    background: #fff5d4;
+    color: #7b0000;
+    border: 2px solid #7b0000;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    /* Profundidade aprimorada */
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.15),
+        0 3px 6px rgba(0, 0, 0, 0.12);
+
+    /* Mais suavidade e nitidez */
+    backdrop-filter: blur(1px);
+
+    transition:
+        background 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        filter 0.25s ease;
+}
+
+/* Hover sofisticado */
+.linha:hover {
+    background: #ffe9a5;
+
+    transform: scale(1.035);
+
+    box-shadow:
+        inset 0 2px 5px rgba(0, 0, 0, 0.15),
+        0 6px 12px rgba(0, 0, 0, 0.22);
+
+    filter: brightness(1.05);
+}
+
+.linha:hover {
+    background: #ffe69b;
+    transform: scale(1.035);
+
+    /* Sombra mais profunda e elegante */
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.28),
+        0 1px 2px rgba(255, 255, 255, 0.45) inset;
+
+    /* Brilho suave deixando mais vivo */
+    filter: brightness(1.05);
+}
+
+/* Texto de feedback */
+.grupo p {
+    font-size: 14px;
+    color: #4a0000;
+    opacity: 0.92;
+    margin-top: 6px;
+
+    /* Mais nitidez e elegância */
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+
+    /* Leve suavização visual */
+    filter: brightness(1.03);
+}
+
+@keyframes fadeDown {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+        filter: blur(1px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        filter: blur(0);
+    }
+}

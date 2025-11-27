@@ -1,0 +1,151 @@
+/* Container principal */
+.hist-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background: #fffdf5;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 18px rgba(0, 0, 0, 0.15);
+    font-family: "Poppins", sans-serif;
+}
+
+/* Título geral */
+.hist-titulo {
+    text-align: center;
+    font-size: 26px;
+    font-weight: 700;
+    color: #8c0000;
+    margin-bottom: 35px;
+    letter-spacing: 1px;
+}
+
+/* Bloco de cada venda */
+.hist-bloco-venda {
+    background: #ffffff;
+    border-left: 6px solid #d4af37;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    animation: fadeIn 0.3s ease;
+}
+
+/* Título da venda */
+.hist-venda-titulo {
+    font-size: 20px;
+    font-weight: 700;
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+/* Informações da venda */
+.hist-info {
+    font-size: 15px;
+    color: #444;
+    margin: 2px 0;
+}
+
+/* Tabela interna de itens */
+.hist-tabela-itens {
+    width: 100%;
+    margin-top: 12px;
+    border-collapse: collapse;
+}
+
+/* Cabeçalho da tabela */
+.hist-tabela-itens th {
+    background: #d4af37;
+    color: white;
+    padding: 10px;
+    font-weight: 600;
+    text-align: left;
+    font-size: 14px;
+}
+
+/* Linhas da tabela */
+.hist-tabela-itens td {
+    padding: 10px;
+    border-bottom: 1px solid #e9e9e9;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Hover das linhas */
+.hist-tabela-itens tr:hover td {
+    background: #fff7d4;
+}
+
+/* Total */
+.hist-total {
+    margin-top: 14px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #008000;
+}
+
+/* Linha divisória */
+.hist-bloco-venda hr {
+    margin-top: 20px;
+    border: none;
+    height: 1px;
+    background: #e0e0e0;
+}
+
+/* Botão de carregar mais */
+.hist-btn-buscar {
+    padding: 12px 28px;
+    font-size: 15px;
+    background: #d4af37;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.hist-btn-buscar:hover {
+    background: #b9972f;
+}
+
+.hist-btn-buscar:disabled {
+    background: #b6b6b6;
+    cursor: not-allowed;
+}
+
+/* Animação suave */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Área de filtros */
+.hist-filtros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.hist-input {
+    flex: 1;
+    padding: 12px 14px;
+    border: 2px solid #d4af37;
+    border-radius: 8px;
+    font-size: 15px;
+    background: #fffdf5;
+    color: #4d0000;
+}
+
+.hist-input:focus {
+    outline: none;
+    border-color: #8c0000;
+    background: #fff7e0;
+}

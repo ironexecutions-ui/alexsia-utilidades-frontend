@@ -1,0 +1,81 @@
+.rodape {
+    width: 98.7%;
+    padding: 25px 10px;
+    background: linear-gradient(180deg, #f6d458, #e8c74b);
+    color: #000;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    border: #5c0000 solid 1px;
+    margin: 3px 3px 3px 0;
+
+    /* Toque profissional */
+    box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px 10px 0 0;
+    animation: fadeUp 0.35s ease-out;
+    backdrop-filter: blur(2px);
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.rodape-texto {
+    font-size: 15px;
+
+    /* Toque profissional */
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+.rodape-direitos {
+    font-size: 13px;
+    opacity: 0.9;
+
+    /* Toque profissional */
+    letter-spacing: 0.25px;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.12);
+    filter: brightness(1.03);
+}
+
+.rodape-linha {
+    width: 100%;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.25);
+    margin: 6px 0 2px 0;
+
+    /* Toque profissional */
+    border-radius: 2px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.18);
+}
+
+.rodape-creditos {
+    font-size: 14px;
+    color: #000;
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s ease;
+
+    /* Toque profissional */
+    letter-spacing: 0.4px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.05);
+}
+
+.rodape-creditos:hover {
+    opacity: 0.6;
+    transform: translateY(-1px);
+}

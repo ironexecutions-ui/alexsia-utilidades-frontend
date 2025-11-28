@@ -65,7 +65,7 @@ export default function ModalPagamento() {
                 {modo === "cartao" && (
                     <>
                         <h2>Cartão</h2>
-                        <p>Confirme o pagamento no terminal</p>
+                        <p>Confirme o pagamento na maquininha</p>
 
                         <button className="btn-confirmar" onClick={recebido}>Recebido</button>
                         <button className="btn-voltar" onClick={() => setModo("selecionar")}>Voltar</button>

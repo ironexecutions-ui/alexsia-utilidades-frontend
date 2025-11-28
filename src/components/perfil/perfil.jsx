@@ -132,7 +132,7 @@ export default function Perfil() {
                 className="botao-logout"
                 onClick={() => setMostrarLogout(true)}
             >
-                Sair
+                X
             </button>
             <div className="topo-perfil">
 

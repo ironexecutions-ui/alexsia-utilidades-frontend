@@ -7,9 +7,7 @@
   background-size: cover;
 }
 
-html {
-  zoom: 160%;
-}
+
 
 .botoes-foto input[type="file"] {
   font-size: 0.8rem;

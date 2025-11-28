@@ -8,6 +8,7 @@ export default function ControleFuncionarios() {
     const [modalAdicionar, setModalAdicionar] = useState(false);
     const [modalEditar, setModalEditar] = useState(false);
     const [modalCodigo, setModalCodigo] = useState(false);
+    const [mostrarInfo, setMostrarInfo] = useState(false);
 
     const [confApagar, setConfApagar] = useState(null); // id que aguarda 2º clique
     const [selecionado, setSelecionado] = useState(null);
@@ -265,7 +266,7 @@ export default function ControleFuncionarios() {
                         <h3>{selecionado.nome_completo}</h3>
 
                         <svg ref={barcodeRef}></svg>
-                        <br />
+                        <br /><br /><br /><br /><br />
                         <div className="modal-btns">
                             <button style={{ display: 'none' }} onClick={imprimirCodigo}>Imprimir</button>
                             <button onClick={() => setModalCodigo(false)}>Fechar</button>
@@ -273,6 +274,57 @@ export default function ControleFuncionarios() {
                     </div>
                 </div>
             )}
+            {/* Botão para mostrar informações do sistema */}
+            <div className="info-bloco">
+                <button
+                    className="btn-info-sistema"
+                    onClick={() => setMostrarInfo(prev => !prev)}
+                >
+                    Informações do Sistema
+                </button>
+
+                {mostrarInfo && (
+                    <div className="info-caixa">
+                        <h3>Infraestrutura do Projeto</h3>
+
+                        <p><strong>Backend</strong></p>
+                        <a href="https://alexsia-utilidades-backend.onrender.com/" target="_blank">
+                            https://alexsia-utilidades-backend.onrender.com/
+                        </a>
+
+                        <p><strong>Frontend</strong></p>
+                        <a href="https://alexsia-utilidades-8x70.onrender.com/" target="_blank">
+                            https://alexsia-utilidades-8x70.onrender.com/
+                        </a>
+                        <br />
+                        <p><strong>Banco de Dados</strong></p>
+                        <div className="info-db">
+                            Host: sql5.freesqldatabase.com<br />
+                            Usuário: sql5807682<br />
+                            Senha: ki8p2GZan2<br />
+                            Base: sql5807682<br />
+                            Porta: 3306
+                        </div>
+                        <br />
+                        <p><strong>Supabase</strong></p>
+                        <div className="info-db">
+                            Email: alexsia.pietro3@gmail.com<br />
+                            Senha: Alexsia2025!
+                        </div>
+                        <br />
+                        <p><strong>Repositórios</strong></p>
+                        <a href="https://github.com/ironexecutions-ui/alexsia-utilidades-frontend.git" target="_blank">
+                            Frontend no GitHub
+                        </a>
+                        <br />
+                        <a href="https://github.com/ironexecutions-ui/alexsia-utilidades-backend.git" target="_blank">
+                            Backend no GitHub
+                        </a>
+                    </div>
+                )}
+            </div>
+
+
         </div>
     );
 }

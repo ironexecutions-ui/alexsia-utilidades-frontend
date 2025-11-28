@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { API_URL } from "../../config";
+import { API_URL } from "../../../config";
 import "./perfil.css";
 
 import PainelComercial from "./components/painelcomercial";

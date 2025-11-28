@@ -136,7 +136,7 @@ export default function Perfil() {
             </button>
             <div className="topo-perfil">
 
-                <h1>Bem vindo, {dados.nome_completo}</h1>
+                <h1><strong> {dados.nome_completo}  </strong> </h1>
 
                 <div className="perfil-menu">
 

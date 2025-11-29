@@ -197,6 +197,7 @@ export default function Inventario() {
                         <option value="Higiene Pessoal" />
                         <option value="Utilidades" />
                         <option value="Outros" />
+                        <option value="Doces" />
                     </datalist>
 
 

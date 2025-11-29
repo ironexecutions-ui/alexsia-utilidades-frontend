@@ -40,6 +40,7 @@ export default function Historico() {
     }
 
     // AGRUPAR POR NÚMERO DE VENDA
+    // AGRUPAR POR NÚMERO DE VENDA
     const vendasAgrupadas = historico.reduce((acc, item) => {
         if (!acc[item.venda_numero]) {
             acc[item.venda_numero] = {
@@ -61,6 +62,10 @@ export default function Historico() {
     }, {});
 
     let listaVendas = Object.values(vendasAgrupadas);
+
+    // inverter ordem do histórico
+    listaVendas.sort((a, b) => b.venda_numero - a.venda_numero);
+
 
     // FILTRO POR USUÁRIO
     if (filtroUsuario.trim() !== "") {

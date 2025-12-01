@@ -10,7 +10,7 @@ export default function TabelaProdutos({ produtos, recarregar, editarProduto }) 
     const [modalAberto, setModalAberto] = useState(false);
     const [produtoSelecionado, setProdutoSelecionado] = useState(null);
     const [valor, setValor] = useState("");
-    const [operacao, setOperacao] = useState("add"); // add ou remove
+    const [operacao, setOperacao] = useState("add");
     const [pagina, setPagina] = useState(1);
     const itensPorPagina = 15;
     const inicio = (pagina - 1) * itensPorPagina;
@@ -43,7 +43,6 @@ export default function TabelaProdutos({ produtos, recarregar, editarProduto }) 
             method: "POST",
             body: form
         });
-
 
         setModalAberto(false);
         recarregar();
@@ -80,6 +79,7 @@ export default function TabelaProdutos({ produtos, recarregar, editarProduto }) 
                 <thead>
                     <tr>
                         <th>Imagem</th>
+                        <th>Código</th>
                         <th>Nome</th>
                         <th>Preço venda</th>
                         <th>Total</th>
@@ -89,12 +89,51 @@ export default function TabelaProdutos({ produtos, recarregar, editarProduto }) 
                 <tbody className="tabela">
                     {exibidos.map((p) => (
                         <tr key={p.id}>
+
+                            {/* Coluna imagem com suporte a arrastar */}
                             <td>
                                 {p.imagem_url ? (
                                     <img src={p.imagem_url} alt={p.nome} className="inv-img" />
                                 ) : (
-                                    <span className="inv-sem-img">Sem imagem</span>
+                                    <div
+                                        className="inv-drop-tabela"
+                                        onDragOver={(e) => e.preventDefault()}
+                                        onDrop={async (e) => {
+                                            e.preventDefault();
+                                            const arquivo = e.dataTransfer.files[0];
+                                            if (!arquivo) return;
+
+                                            const form = new FormData();
+                                            form.append("imagem", arquivo);
+                                            form.append("nome", p.nome);
+                                            form.append("categoria", p.categoria);
+                                            form.append("preco_custo", p.preco_custo);
+                                            form.append("preco_venda", p.preco_venda);
+                                            form.append("unidade_medida", p.unidade_medida);
+                                            form.append("descricao", p.descricao);
+                                            form.append("codigo_barras", p.codigo_barras);
+
+                                            await fetch(`${API_URL}/produtos/${p.id}`, {
+                                                method: "PUT",
+                                                body: form
+                                            });
+
+                                            recarregar();
+                                        }}
+                                    >
+                                        Arraste a imagem
+                                    </div>
                                 )}
+                            </td>
+
+                            {/* Coluna código com botão copiar */}
+                            <td>
+                                <button
+                                    className="inv-copy-btn"
+                                    onClick={() => navigator.clipboard.writeText(p.codigo_barras)}
+                                >
+                                    Copiar
+                                </button>
                             </td>
 
                             <td>{p.nome}</td>
@@ -109,6 +148,7 @@ export default function TabelaProdutos({ produtos, recarregar, editarProduto }) 
                                     Editar
                                 </button>
                             </td>
+
                         </tr>
                     ))}
                 </tbody>

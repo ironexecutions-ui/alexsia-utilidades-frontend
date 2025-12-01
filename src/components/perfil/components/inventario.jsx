@@ -228,26 +228,47 @@ export default function Inventario() {
 
                     <textarea name="descricao" value={form.descricao} placeholder="Descrição" rows="3" style={{ display: "none" }} onChange={handleChange} />
 
+                    {/* Área para arrastar a imagem */}
                     <label>Imagem do produto</label>
+
+                    <div
+                        className="inv-dropzone"
+                        onDragOver={(e) => e.preventDefault()}
+                        onDrop={(e) => {
+                            e.preventDefault();
+                            const arquivo = e.dataTransfer.files[0];
+                            if (arquivo) {
+                                setImagem(arquivo);
+                                setPreviewImagem(URL.createObjectURL(arquivo));
+                            }
+                        }}
+                        onClick={() => document.getElementById("inv-file").click()}
+                    >
+                        <p>Arraste a imagem aqui ou clique para selecionar</p>
+
+                        {previewImagem && (
+                            <img
+                                src={previewImagem}
+                                alt="Pré visualização"
+                                className="inv-preview"
+                            />
+                        )}
+                    </div>
+
                     <input
+                        id="inv-file"
                         type="file"
                         accept="image/*"
+                        style={{ display: "none" }}
                         onChange={(e) => {
                             const arquivo = e.target.files[0];
-                            setImagem(arquivo);
-
                             if (arquivo) {
+                                setImagem(arquivo);
                                 setPreviewImagem(URL.createObjectURL(arquivo));
                             }
                         }}
                     />
-                    {previewImagem && (
-                        <img
-                            src={previewImagem}
-                            alt="Pré visualização"
-                            className="inv-preview"
-                        />
-                    )}
+
 
                     {erroCodigo && <p className="inv-erro">{erroCodigo}</p>}
 

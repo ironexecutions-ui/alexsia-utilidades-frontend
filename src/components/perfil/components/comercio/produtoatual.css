@@ -110,3 +110,150 @@
         transform: translateY(0);
     }
 }
+
+/* Caixa principal */
+.pa-box {
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 18px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Título */
+.pa-titulo {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+/* Área interna */
+.pa-content {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Imagem */
+.pa-img-area {
+    width: 130px;
+    height: 130px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f3f3f3;
+}
+
+.pa-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Informações */
+.pa-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pa-nome {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+}
+
+/* Linhas de dados */
+.pa-linha {
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+
+.pa-label {
+    font-weight: 600;
+    color: #444;
+}
+
+.pa-valor {
+    color: #666;
+}
+
+/* Preço normal e clicável */
+.pa-preco {
+    font-size: 18px;
+    font-weight: 700;
+    color: #007bff;
+    transition: 0.2s ease;
+}
+
+.pa-preco:hover {
+    opacity: 0.8;
+    transform: scale(1.02);
+}
+
+/* Edição de preço */
+.editar-preco {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Input do preço */
+.input-preco {
+    padding: 6px 8px;
+    width: 100px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: border 0.2s ease;
+}
+
+.input-preco:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Botões */
+.btn-salvar-preco,
+.btn-cancelar-preco {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+/* Botão salvar */
+.btn-salvar-preco {
+    background: #28a745;
+    color: white;
+}
+
+.btn-salvar-preco:hover {
+    background: #218838;
+}
+
+/* Botão cancelar */
+.btn-cancelar-preco {
+    background: #dc3545;
+    color: white;
+}
+
+.btn-cancelar-preco:hover {
+    background: #c82333;
+}
+
+/* Estado vazio */
+.pa-box.vazio {
+    text-align: center;
+}
+
+.pa-aviso {
+    color: #666;
+}

@@ -473,3 +473,38 @@
         font-size: 17px;
     }
 }
+
+.inv-drop-tabela {
+    width: 90px;
+    height: 90px;
+    border: 2px dashed #888;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #555;
+    background: #f8f8f8;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.inv-drop-tabela:hover {
+    background: #eaeaea;
+    border-color: #555;
+}
+
+.inv-copy-btn {
+    padding: 5px 10px;
+    background: #0077ff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.inv-copy-btn:hover {
+    background: #005fcc;
+}

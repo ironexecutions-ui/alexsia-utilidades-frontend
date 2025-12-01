@@ -14,6 +14,29 @@ export function VendaProvider({ children }) {
     }
 
     // -------------------------------------------------
+    // ATUALIZAR PREÇO DE UM ITEM JÁ ADICIONADO
+    // -------------------------------------------------
+    function atualizarPrecoItem(produtoAtualizado) {
+        setItens(prev => {
+            const listaNova = prev.map(item => {
+                if (item.id === produtoAtualizado.id) {
+                    const novoSubtotal = produtoAtualizado.preco_venda * item.quantidade;
+
+                    return {
+                        ...item,
+                        preco: produtoAtualizado.preco_venda,
+                        subtotal: novoSubtotal
+                    };
+                }
+                return item;
+            });
+
+            calcularTotal(listaNova);
+            return listaNova;
+        });
+    }
+
+    // -------------------------------------------------
     // ADICIONAR ITEM
     // -------------------------------------------------
     function adicionarItem(produto) {
@@ -42,7 +65,6 @@ export function VendaProvider({ children }) {
                 subtotal: produto.preco_venda,
                 unidade_medida: produto.unidade_medida
             };
-
 
             const listaNova = [...prev, novoItem];
             calcularTotal(listaNova);
@@ -78,7 +100,6 @@ export function VendaProvider({ children }) {
             const item = prev.find(i => i.id === id);
             if (!item) return prev;
 
-            // Se tiver apenas 1, remove
             if (item.quantidade === 1) {
                 const listaNova = prev.filter(i => i.id !== id);
                 calcularTotal(listaNova);
@@ -101,7 +122,7 @@ export function VendaProvider({ children }) {
     }
 
     // -------------------------------------------------
-    // REMOVER ITEM INTEIRO
+    // REMOVER ITEM
     // -------------------------------------------------
     function removerItem(id) {
         setItens(prev => {
@@ -112,7 +133,7 @@ export function VendaProvider({ children }) {
     }
 
     // -------------------------------------------------
-    // LIMPAR TUDO
+    // LIMPAR VENDA
     // -------------------------------------------------
     function limparVenda() {
         setItens([]);
@@ -130,7 +151,8 @@ export function VendaProvider({ children }) {
             diminuirQuantidade,
             removerItem,
             total,
-            limparVenda
+            limparVenda,
+            atualizarPrecoItem   // ← exportado aqui
         }}>
             {children}
         </VendaContext.Provider>

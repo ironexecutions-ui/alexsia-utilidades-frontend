@@ -281,3 +281,34 @@
         height: 85px;
     }
 }
+
+.inv-dropzone {
+    width: 30%;
+    min-height: 130px;
+    border: 2px dashed #888;
+    border-radius: 10px;
+    padding: 20px;
+    background: #fafafa;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.inv-dropzone:hover {
+    background: #f0f0f0;
+    border-color: #555;
+}
+
+.inv-dropzone p {
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.inv-preview {
+    margin-top: 10px;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}

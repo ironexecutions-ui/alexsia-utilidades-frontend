@@ -34,6 +34,29 @@ export default function Perfil() {
                 setSemToken(true);
             });
     }, []);
+    // Atualiza somente o nome a cada 30 segundos
+    useEffect(() => {
+        if (!dados) return;
+
+        const token = localStorage.getItem("token");
+        if (!token) return;
+
+        const intervalo = setInterval(() => {
+            fetch(`${API_URL}/perfil`, {
+                headers: { Authorization: token }
+            })
+                .then(r => r.json())
+                .then(novo => {
+                    setDados(prev => ({
+                        ...prev,
+                        nome_completo: novo.nome_completo
+                    }));
+                })
+                .catch(() => { });
+        }, 30000); // 30 segundos
+
+        return () => clearInterval(intervalo);
+    }, [dados]);
 
     if (semToken) {
         return (

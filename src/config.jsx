@@ -3,5 +3,5 @@ const isLocalhost =
     window.location.hostname === "127.0.0.1";
 
 export const API_URL = isLocalhost
-    ? "http://localhost:8000"
+    ? "http://localhost:8888"
     : "https://alexsia-utilidades-backend.onrender.com";

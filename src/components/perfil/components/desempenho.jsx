@@ -4,6 +4,7 @@ import "./desempenho.css";
 import MaioresMenores from "./desempenho/maioresmenores";
 import Historico from "./desempenho/historico";
 import Grafico from "./desempenho/grafico";
+import FechamentoDiario from "./desempenho/fechamentodiario";
 
 export default function Desempenho() {
 
@@ -35,12 +36,21 @@ export default function Desempenho() {
                 >
                     Gráficos
                 </button>
+
+                <button
+                    className={aba === "fechamento" ? "ativo" : ""}
+                    onClick={() => setAba("fechamento")}
+                >
+                    Fechamento Diário
+                </button>
             </div>
 
             <div className="desempenho-conteudo">
                 {aba === "maiores" && <MaioresMenores />}
                 {aba === "historico" && <Historico />}
                 {aba === "grafico" && <Grafico />}
+                {aba === "fechamento" && <FechamentoDiario />}
+                {/* Quando o arquivo existir, troque por <FechamentoDiario /> */}
             </div>
 
         </div>

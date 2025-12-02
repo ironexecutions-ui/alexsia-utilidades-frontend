@@ -124,7 +124,7 @@ export default function Historico() {
                             <tr>
                                 <th>Produto</th>
                                 <th>Qtd</th>
-                                <th>Valor unitário</th>
+                                <th>Valor</th>
                             </tr>
                         </thead>
 

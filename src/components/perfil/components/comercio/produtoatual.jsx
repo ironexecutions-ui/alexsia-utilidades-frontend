@@ -73,7 +73,7 @@ export default function ProdutoAtual() {
                         alt="Foto do produto"
                         className="pa-img"
                         onError={(e) => {
-                            e.target.src = "/logo.jpg";
+                            e.target.src = "./logo.jpg";
                         }}
                     />
                 </div>

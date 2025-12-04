@@ -27,10 +27,7 @@ export default function Historico() {
             const dados = await resp.json();
             const lista = dados.historico || [];
 
-            // garante que tudo fica em ordem de venda mais recente
-            const ordenado = [...lista].sort((a, b) => b.venda_numero - a.venda_numero);
-
-            setHistorico(prev => [...prev, ...ordenado]);
+            setHistorico(prev => [...prev, ...lista]);
             setPagina(prev => prev + 1);
 
         } catch (err) {
@@ -40,40 +37,16 @@ export default function Historico() {
         }
     }
 
-    // agrupamento por número da venda
-    const vendasAgrupadas = historico.reduce((acc, item) => {
-        if (!acc[item.venda_numero]) {
-            acc[item.venda_numero] = {
-                venda_numero: item.venda_numero,
-                usuario_nome: item.usuario_nome,
-                data_hora: item.data_hora,
-                total_venda: item.total_venda,
-                itens: []
-            };
-        }
+    let listaVendas = [...historico];
 
-        acc[item.venda_numero].itens.push({
-            nome_produto: item.nome_produto,
-            quantidade: item.quantidade,
-            preco_pago: item.preco_pago
-        });
-
-        return acc;
-    }, {});
-
-    let listaVendas = Object.values(vendasAgrupadas);
-
-    // garante que sempre apareça da mais recente para a mais antiga
     listaVendas.sort((a, b) => b.venda_numero - a.venda_numero);
 
-    // filtro por usuário
     if (filtroUsuario.trim() !== "") {
         listaVendas = listaVendas.filter(v =>
             v.usuario_nome.toLowerCase().includes(filtroUsuario.toLowerCase())
         );
     }
 
-    // filtro por data
     if (filtroData.trim() !== "") {
         listaVendas = listaVendas.filter(v =>
             v.data_hora.startsWith(filtroData)
@@ -127,7 +100,7 @@ export default function Historico() {
                         </thead>
 
                         <tbody>
-                            {venda.itens.map((item, i) => (
+                            {(venda.itens || []).map((item, i) => (
                                 <tr key={i}>
                                     <td>{item.nome_produto}</td>
                                     <td>{item.quantidade}</td>

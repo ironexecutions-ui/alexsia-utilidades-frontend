@@ -7,15 +7,13 @@ export default function Historico() {
     const [historico, setHistorico] = useState([]);
     const [pagina, setPagina] = useState(1);
     const [carregando, setCarregando] = useState(false);
-    const itensPorPagina = 10;
+    const itensPorPagina = 7;
 
     const [filtroUsuario, setFiltroUsuario] = useState("");
     const [filtroData, setFiltroData] = useState("");
 
     useEffect(() => {
-        if (historico.length === 0) {
-            carregarMais();
-        }
+        carregarMais();
     }, []);
 
     async function carregarMais() {
@@ -29,7 +27,10 @@ export default function Historico() {
             const dados = await resp.json();
             const lista = dados.historico || [];
 
-            setHistorico(prev => [...prev, ...lista]);
+            // garante que tudo fica em ordem de venda mais recente
+            const ordenado = [...lista].sort((a, b) => b.venda_numero - a.venda_numero);
+
+            setHistorico(prev => [...prev, ...ordenado]);
             setPagina(prev => prev + 1);
 
         } catch (err) {
@@ -39,8 +40,7 @@ export default function Historico() {
         }
     }
 
-    // AGRUPAR POR NÚMERO DE VENDA
-    // AGRUPAR POR NÚMERO DE VENDA
+    // agrupamento por número da venda
     const vendasAgrupadas = historico.reduce((acc, item) => {
         if (!acc[item.venda_numero]) {
             acc[item.venda_numero] = {
@@ -63,21 +63,20 @@ export default function Historico() {
 
     let listaVendas = Object.values(vendasAgrupadas);
 
-    // inverter ordem do histórico
+    // garante que sempre apareça da mais recente para a mais antiga
     listaVendas.sort((a, b) => b.venda_numero - a.venda_numero);
 
-
-    // FILTRO POR USUÁRIO
+    // filtro por usuário
     if (filtroUsuario.trim() !== "") {
-        listaVendas = listaVendas.filter(venda =>
-            venda.usuario_nome.toLowerCase().includes(filtroUsuario.toLowerCase())
+        listaVendas = listaVendas.filter(v =>
+            v.usuario_nome.toLowerCase().includes(filtroUsuario.toLowerCase())
         );
     }
 
-    // FILTRO POR DATA
+    // filtro por data
     if (filtroData.trim() !== "") {
-        listaVendas = listaVendas.filter(venda =>
-            venda.data_hora.startsWith(filtroData)
+        listaVendas = listaVendas.filter(v =>
+            v.data_hora.startsWith(filtroData)
         );
     }
 
@@ -86,7 +85,6 @@ export default function Historico() {
 
             <h3 className="hist-titulo">Histórico de vendas</h3>
 
-            {/* Caixa de filtros */}
             <div className="hist-filtros">
                 <input
                     className="hist-input"
